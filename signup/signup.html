@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Chatbase</title>
+    <style>
+    body {
+        margin: 0%;
+        background-color: darkslateblue;
+    }
+    .heading {
+        color:white;
+        text-align: center;
+        padding-top: 30px;
+    }
+    .form-div {
+        background-color:indigo;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        width:500px;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <h1 class="heading">Chatbase</h1>
+    <div class="form-div">
+        <h2 style="color:white;padding-top: 30px;">Register</h2>
+        <form action="connect.php" method="POST">
+            <div style="padding:20px">
+                <input style="width:350px" type="text"  name="full-name" placeholder="Full name" autofocus required>
+            </div>
+            <div style="padding:20px">
+                <input style="width:350px" type="text"  name="username" placeholder="User name" required>
+            </div>
+            <div style="color: white;">
+                <input  type="radio" name="gender" value="male" required>Male
+                <input  type="radio" name="gender" value="female" required>Female
+            </div>
+            <div style="padding:20px">
+                <input class="password" style="width:350px" type="password" name="password" placeholder="Password" >
+            </div>
+            <div style="padding:20px">
+                <input class="confirmPassword" style="width:350px" type="password"  name="re-password" placeholder="Confirm password" >
+            </div>
+            <div style="padding:20px;padding-bottom: 30px;">
+                <input class="button" style="width:100px" type="submit" value="Register">
+                <!--<button class="button" type="submit">Register</button>-->
+            </div>
+        </form>
+    </div>
+    
+
+
+    <script>
+    document.querySelector('.button').onclick = function(){
+        var password = document.querySelector('.password').value,
+            confirmPassword = document.querySelector('.confirmPassword').value;
+
+        if (password == ""){
+            alert("Password field is empty.");
+            return false;
+        }
+        else if (password != confirmPassword){
+            alert("Password doesnt match. Try again.");
+            return false;
+        }
+
+    }
+    </script>
+</body>
+</html>
